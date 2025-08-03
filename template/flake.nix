@@ -1,0 +1,42 @@
+{
+  description = "qNixOS with qnixpkgs";
+
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://quyo-public.cachix.org"
+      "ssh://eu.nixbuild.net?priority=90"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "quyo-public.cachix.org-1:W83ifK7/6EvKU4Q2ZxvHRAkiIRzPeXYnp9LWHezs5U0="
+      "nixbuild.net/quyo-1:TaAsUc6SBQnXhUQJM4s+1oQlTKa1e3M0u3Zqb36fbRc="
+    ];
+  };
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    qnixos.url = "github:quyo/qnixos";
+    qnixos.inputs.nixpkgs.follows = "nixpkgs";
+    qnixos.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+  };
+
+  outputs = inputs@{ self, nixpkgs, qnixos, ... }:
+    let
+      hostname = "nyx";
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+
+          qnixos.nixosModules.default
+          ./configuration.nix
+
+        ];
+      };
+    };
+}
