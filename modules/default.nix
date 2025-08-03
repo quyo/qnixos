@@ -50,7 +50,12 @@ in
   imports = [
     inputs.qnixpkgs.nixosModules.userprofile
   ] ++ [
-    ./system-packages.nix
+    ./qos-base.nix
+    ./qos-desktop.nix
+    ./qos-network.nix
+    ./qos-nixos.nix
+    ./qos-service.nix
+    ./qos-user.nix
   ];
 
 }
