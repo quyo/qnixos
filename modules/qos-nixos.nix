@@ -61,9 +61,7 @@
 
       nix-collect-garbage --delete-older-than 90d
 
-      nix flake update nixpkgs           --flake /etc/nixos
-      nix flake update nixpkgs-unstable  --flake /etc/nixos
-      nix flake update qnixos            --flake /etc/nixos
+      nix flake update                   --flake /etc/nixos
       nixos-rebuild switch               --flake /etc/nixos
 
       nix flake metadata nixpkgs          >/dev/null
