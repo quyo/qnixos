@@ -69,7 +69,7 @@
 
       GIT_AUTHOR_NAME="NixOSupd service"  GIT_AUTHOR_EMAIL="nixosupd@${config.quyo.host.fqdn}" \
       GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL                \
-      git -C /etc/nixos commit -a -m "v$(date +%Y-%m-%d)-00"
+      git -C /etc/nixos commit -a -m "v$(date +%Y.%m.%d)-00"
     '';
   };
 
