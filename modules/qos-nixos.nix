@@ -42,7 +42,7 @@
     timerConfig = {
       OnCalendar = "daily";
       RandomizedDelaySec = "3600";
-      Persistent = true;
+      Persistent = false;
     };
   };
 
