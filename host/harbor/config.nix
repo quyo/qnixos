@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostname, ... }:
 
 {
 
@@ -8,11 +8,7 @@
   };
 
   config.quyo = {
-    host = rec {
-      name = "harbor";
-      fqdn = "${name}.sky.quyo.net";
-    };
-    tailscale.enable = true;
+    fqdn = "${hostname}.sky.quyo.net";
   };
 
   config.networking = {

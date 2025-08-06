@@ -4,7 +4,7 @@
 
   services.postfix = {
     enable = true;
-    hostname = config.quyo.host.fqdn;
+    hostname = config.quyo.fqdn;
     rootAlias = "johm@quyo.de";
 
     extraConfig = ''

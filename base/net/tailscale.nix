@@ -2,6 +2,6 @@
 
 {
 
-  services.tailscale.enable = config.quyo.tailscale.enable;
+  services.tailscale.enable = true;
 
 }

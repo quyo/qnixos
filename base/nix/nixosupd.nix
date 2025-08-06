@@ -10,7 +10,7 @@
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "daily";
-      RandomizedDelaySec = "3600";
+      RandomizedDelaySec = "7200";
       Persistent = false;
     };
   };
@@ -36,8 +36,8 @@
       nix flake metadata nixpkgs          >/dev/null
       nix flake metadata nixpkgs-unstable >/dev/null
 
-      GIT_AUTHOR_NAME="NixOSupd service"  GIT_AUTHOR_EMAIL="nixosupd@${config.quyo.host.fqdn}" \
-      GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL                \
+      GIT_AUTHOR_NAME="NixOSupd service"  GIT_AUTHOR_EMAIL="nixosupd@${config.quyo.fqdn}" \
+      GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL           \
       git -C /etc/nixos commit -a -m "v$(date +%Y.%m.%d)-00"
     '';
   };

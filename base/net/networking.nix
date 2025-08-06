@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostname, ... }:
 
 {
 
-  networking.hostName = config.quyo.host.name;
+  networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
 
-  # networking.wireless.enable = true;
+  networking.wireless.enable = false;
 
 }
