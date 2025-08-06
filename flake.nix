@@ -1,5 +1,5 @@
 {
-  description = "qNixOS with qnixpkgs";
+  description = "qNixOS modules";
 
   nixConfig = {
     extra-substituters = [
@@ -26,8 +26,7 @@
 
   outputs = inputs@{ self, ... }:
     {
-      nixosModules = {
-        default = import ./modules/default.nix { inherit inputs; };
-      };
+      extendSpecialArgs = import ./specialArgs.nix { inherit inputs; };
+      nixosModules = import ./host;
     };
 }

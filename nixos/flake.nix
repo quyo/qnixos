@@ -1,5 +1,5 @@
 {
-  description = "qNixOS with qnixpkgs";
+  description = "qNixOS";
 
   nixConfig = {
     extra-substituters = [
@@ -25,18 +25,18 @@
 
   outputs = inputs@{ self, nixpkgs, qnixos, ... }:
     let
-      hostname = "nyx";
+      hostname = "foobar";
       system = "x86_64-linux";
     in
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        inherit system;
+
+        specialArgs = qnixos.extendSpecialArgs { inherit inputs system; };
         modules = [
-
-          qnixos.nixosModules.default
-          ./configuration.nix
-
+          qnixos.nixosModules.${hostname}
+          ./secrets.nix
         ];
+
       };
     };
 }

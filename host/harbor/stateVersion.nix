@@ -1,12 +1,6 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./qos-config.nix
-    ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

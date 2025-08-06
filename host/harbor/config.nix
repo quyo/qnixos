@@ -8,13 +8,11 @@
   };
 
   config.quyo = {
-    desktop = true;
     host = rec {
-      name = "nyx";
+      name = "harbor";
       fqdn = "${name}.sky.quyo.net";
     };
     tailscale.enable = true;
-    postfix.sasl_password = "static:{user}:{pwd}";
   };
 
   config.networking = {
@@ -22,13 +20,13 @@
 
     interfaces.ens18 = {
       ipv4.addresses = [{
-        address = "192.168.xx.xx";
+        address = "192.168.72.101";
         prefixLength = 23;
       }];
     };
 
-    defaultGateway = "192.168.xx.xx";
-    nameservers = [ "192.168.xx.xx" ];
+    defaultGateway = "192.168.73.173";
+    nameservers = [ "192.168.73.173" ];
   };
 
 }
