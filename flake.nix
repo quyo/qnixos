@@ -24,9 +24,9 @@
     qnixpkgs.inputs.qnixpkgs.follows = "qnixpkgs";
   };
 
-  outputs = inputs@{ self, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
     {
       extendSpecialArgs = import ./specialArgs.nix { inherit inputs; };
-      nixosModules = import ./host;
+      nixosModules = import ./host { lib = nixpkgs.lib; };
     };
 }

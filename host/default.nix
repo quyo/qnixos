@@ -1,6 +1,12 @@
-{
-  default = import ./default;
+{ lib }:
 
-  harbor = import ./harbor;
-  nyx = import ./nyx;
-}
+let
+  modules = builtins.mapAttrs
+    (name: type: import ./${name})
+    (lib.filterAttrs
+      (name: type: type == "directory")
+      (builtins.readDir ./.)
+    );
+in
+
+modules
