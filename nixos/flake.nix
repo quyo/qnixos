@@ -33,7 +33,10 @@
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 
+        inherit system;
+
         specialArgs = qnixos.extendSpecialArgs { inherit inputs system hostname; };
+
         modules = [
           qnixos.nixosModules.${hostname}
           ./secrets.nix
