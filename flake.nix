@@ -17,6 +17,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/release-25.05";
 
     qnixpkgs.url = "github:quyo/qnixpkgs";
     qnixpkgs.inputs.nixpkgs-stable.follows = "nixpkgs";
