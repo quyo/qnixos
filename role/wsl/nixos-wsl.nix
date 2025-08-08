@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, hostname, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
 
@@ -8,7 +8,5 @@
 
   wsl.enable = true;
   wsl.defaultUser = "johm";
-
-  networking.hostName = hostname;
 
 }
