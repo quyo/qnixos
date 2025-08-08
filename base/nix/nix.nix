@@ -2,6 +2,9 @@
 
 {
 
+  nix.channel.enable = false;
+  nix.nixPath = [ ];
+
   nix.settings = {
     auto-optimise-store = true;
     builders-use-substitutes = true;
