@@ -10,12 +10,10 @@ let
 
   nixbuildNet = {
     hostName = "eu.nixbuild.net";
-    protocol = "ssh";
+    protocol = "ssh-ng";
     maxJobs = 100;
     supportedFeatures = [ "big-parallel" "benchmark" ];
 
-    publicHostKey = "AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
-    sshUser = "root";
     sshKey = "${config.users.users.root.home}/.ssh/id_ed25519";
   };
 in
@@ -32,6 +30,7 @@ in
 
   nix.buildMachines = builtins.map (system: nixbuildNet // { inherit system; }) systems;
 
+  programs.ssh.knownHosts."eu.nixbuild.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
   programs.ssh.extraConfig = lib.mkBefore ''
     Host eu.nixbuild.net
       ServerAliveInterval 60
