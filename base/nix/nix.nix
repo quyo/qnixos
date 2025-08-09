@@ -7,7 +7,6 @@
 
   nix.settings = {
     auto-optimise-store = true;
-    builders-use-substitutes = true;
     experimental-features = [ "nix-command" "flakes" ];
     require-sigs = true;
     sandbox = "relaxed";
