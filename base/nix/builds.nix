@@ -27,7 +27,7 @@ in
       builders-use-substitutes = true;
       fallback = true;
       keep-going = true;
-    }
+    };
   };
 
   nix.buildMachines = builtins.map (system: nixbuildNet // { inherit system; }) systems;
