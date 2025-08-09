@@ -7,7 +7,7 @@
     map qlib.relativeToRoot
     [
       "role/server"
-      "component/docker"
+      "part/docker"
     ];
 
 }
