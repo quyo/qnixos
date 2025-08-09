@@ -28,4 +28,37 @@
 
   };
 
+  programs.ssh.extraConfig = ''
+
+    Host docker
+      User root
+      HostName do-fra1-docker.tailaccaf.ts.net
+
+    Host mx
+      User root
+      HostName do-fra1-mx.tailaccaf.ts.net
+
+    Host ns
+      User root
+      HostName do-fra1-ns.tailaccaf.ts.net
+
+    Host matrix
+      User root
+      HostName do-fra1-matrix.tailaccaf.ts.net
+
+
+    Host core
+      User pi
+      HostName ka-core.tailaccaf.ts.net
+
+    Host nyx
+      User johm
+      HostName ka-sky-nyx.tailaccaf.ts.net
+
+    Host harbor
+      User johm
+      HostName ka-sky-harbor.tailaccaf.ts.net
+
+  '';
+
 }
