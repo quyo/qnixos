@@ -9,6 +9,7 @@ specialArgs
 //
 {
   inherit inputs;
+  secrets = inputs.qnixos-secrets;
   qlib = lib.q
   //
   {

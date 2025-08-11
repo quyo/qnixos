@@ -8,7 +8,7 @@
   };
 
   config.quyo = {
-    fqdn = "${hostname}";
+    fqdn = "${hostname}.local";
   };
 
 }

@@ -30,6 +30,9 @@
     qnixpkgs.inputs.nixpkgs-stable.follows = "nixpkgs";
     qnixpkgs.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
     qnixpkgs.inputs.qnixpkgs.follows = "qnixpkgs";
+
+    qnixos-secrets.url = "git+ssh://git@github.com/quyo/qnixos-secrets";
+    qnixos-secrets.flake = false;
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
