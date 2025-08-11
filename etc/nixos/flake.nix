@@ -18,13 +18,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/release-25.05";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
-
     qnixos.url = "github:quyo/qnixos";
     qnixos.inputs.nixpkgs.follows = "nixpkgs";
     qnixos.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-    qnixos.inputs.nixos-wsl.follows = "nixos-wsl";
   };
 
   outputs = inputs@{ self, nixpkgs, qnixos, ... }:
@@ -41,7 +37,6 @@
 
         modules = [
           qnixos.nixosModules.${hostname}
-          ./secrets.nix
         ];
 
       };
