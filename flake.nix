@@ -21,6 +21,11 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/release-25.05";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+    # optionally choose not to download darwin deps (saves some resources on Linux)
+    agenix.inputs.darwin.follows = "";
+
     qnixpkgs.url = "github:quyo/qnixpkgs";
     qnixpkgs.inputs.nixpkgs-stable.follows = "nixpkgs";
     qnixpkgs.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
