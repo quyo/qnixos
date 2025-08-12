@@ -123,11 +123,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754260947,
-        "narHash": "sha256-NNIdR1lJUs6nuc3eNkeDHKoESqhVoZTh0BazRm8YFks=",
+        "lastModified": 1754956163,
+        "narHash": "sha256-MILjY3/xJlc8Smd7o5tPSZI890hNksZMwUtB1tRAdOM=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "71348ffd722cfc0d9c336e968e6906dbc25c4084",
+        "rev": "79b8d52d51db4d239249b70adfcf8daae375a86a",
         "type": "github"
       },
       "original": {
@@ -172,11 +172,11 @@
     "qnixos-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1754943300,
-        "narHash": "sha256-3DKUS8FKaHYydcMJVQsTb+Pqoy6Ipx+Je+Y1zZrHnbY=",
+        "lastModified": 1754981954,
+        "narHash": "sha256-Thl8ATKNXaIKbj35lDRZ2JxjGASvfwJACsC4zfwK418=",
         "ref": "refs/heads/main",
-        "rev": "dd59da4f5b454ee679f160afb4b48adbba2a48c6",
-        "revCount": 2,
+        "rev": "1c4a88748d9f1e2afcc9b80082a9fdc2f8040e42",
+        "revCount": 3,
         "type": "git",
         "url": "ssh://git@github.com/quyo/qnixos-secrets"
       },
