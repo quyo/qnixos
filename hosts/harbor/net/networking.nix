@@ -2,8 +2,8 @@
 
 {
 
-  systemd.network.enable = true;
-  services.resolved.enable = true;
+  systemd.network.enable = lib.mkForce true;
+  services.resolved.enable = lib.mkForce true;
 
   networking.interfaces.ens18.ipv4.addresses = [
     { address = "192.168.72.101"; prefixLength = 23; }
