@@ -2,7 +2,7 @@
 
 {
 
-  options.quyo.net.fqdn = mkOption {
+  options.quyo.net.fqdn = lib.mkOption {
     type = types.str;
     default = "${hostname}.local";
     example = "foobar.local";
