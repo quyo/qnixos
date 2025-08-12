@@ -16,6 +16,8 @@ let
 in
 {
 
+  nixpkgs.hostPlatform = system;
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ overlay-unstable overlay-qnixpkgs ];
 

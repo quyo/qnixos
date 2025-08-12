@@ -4,8 +4,12 @@
 
   networking.hostName = hostname;
 
-  networking.networkmanager.enable = true;
+  networking.useDHCP = false;
 
   networking.wireless.enable = false;
+
+  networking.networkmanager.enable = false;
+  systemd.network.enable = false;
+  services.resolved.enable = false;
 
 }
