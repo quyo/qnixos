@@ -18,4 +18,4 @@ upgrade:
     sudo nixos-rebuild switch --flake /etc/nixos
 
 cleanup:
-    nix-collect-garbage --delete-older-than 7d
+    sudo nix-collect-garbage --delete-older-than 7d
