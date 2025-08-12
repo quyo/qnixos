@@ -28,7 +28,7 @@
       PATH=$PATH:${pkgs.git}/bin
       PATH=$PATH:${pkgs.openssh}/bin
 
-      nix-collect-garbage --delete-older-than 90d
+      nix-collect-garbage --delete-older-than 7d
 
       nix flake update                   --flake /etc/nixos
       nixos-rebuild switch               --flake /etc/nixos

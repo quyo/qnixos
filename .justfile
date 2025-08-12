@@ -1,5 +1,11 @@
 default:
+    just cleanup
     just update
+    just upgrade
+
+all:
+    just cleanup
+    just update-all
     just upgrade
 
 update:
@@ -10,3 +16,6 @@ update-all:
 
 upgrade:
     sudo nixos-rebuild switch --flake /etc/nixos
+
+cleanup:
+    nix-collect-garbage --delete-older-than 7d
