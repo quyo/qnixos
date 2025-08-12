@@ -6,7 +6,8 @@
     ++
     map qlib.relativeToRoot
     [
-      "role/wsl"
+      "roles/server"
+      "parts/docker"
     ];
 
 }

@@ -6,7 +6,7 @@
     ++
     map qlib.relativeToRoot
     [
-      "role/wsl"
+      "roles/wsl"
     ];
 
 }

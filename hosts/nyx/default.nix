@@ -6,8 +6,8 @@
     ++
     map qlib.relativeToRoot
     [
-      "role/desktop"
-      "part/docker"
+      "roles/desktop"
+      "parts/docker"
     ];
 
 }
