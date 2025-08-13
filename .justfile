@@ -1,9 +1,11 @@
 default:
+    just edit
     just cleanup
     just update
     just upgrade
 
 all:
+    just edit
     just cleanup
     just update-all
     just upgrade
@@ -19,3 +21,6 @@ upgrade:
 
 cleanup:
     sudo nix-collect-garbage --delete-older-than 7d
+
+edit:
+    sudo $EDITOR /etc/nixos/flake.nix
