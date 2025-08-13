@@ -8,6 +8,7 @@
     [
       "roles/server"
       "parts/docker"
+      "parts/qemu-guest"
     ];
 
 }
