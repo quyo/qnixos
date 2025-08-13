@@ -23,8 +23,12 @@
     "do-fra1-matrix.tailaccaf.ts.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExxhbOeWTYuitxLVFG/opw4HUPAV6fcN53o7rQQZQvy";
 
     "ka-core.tailaccaf.ts.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPMBhiy68JIS9v03XIkJpioK8zrfQVnQwHCidCjZoOlX";
-    "ka-sky-nyx.tailaccaf.ts.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGfU5fWGMhuf6y1re7qhnAUE11o+SiqIyTbtNqbvR+w/";
     "ka-sky-harbor.tailaccaf.ts.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGr2mJh30G/UhroOTkGacUSatmbTUEmW+eAnujfE7ajA";
+
+    ka-sky-nyx = {
+      hostNames = [ "ka-sky-nyx.tailaccaf.ts.net" "nyx.sky.quyo.net" "sky.quyo.net" ];
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGfU5fWGMhuf6y1re7qhnAUE11o+SiqIyTbtNqbvR+w/";
+    };
 
   };
 
