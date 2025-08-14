@@ -14,13 +14,20 @@
     settings = {
       period = 300;            # alle 300s externe IP prüfen
       forced-update = 2592000; # alle 30 Tage Update erzwingen
+      allow-ipv6 = true;
 
-      provider."no-ip.com".include = config.age.secrets.inadyn-provider-noip.path;
       provider."no-ip.com" = {
+        include  = config.age.secrets.inadyn-provider-noip.path;
         hostname = [ "all.ddnskey.com" ];
-        # optional:
-        # checkip-server = "ifconfig.me";
-        # checkip-ssl = true;
+        checkip-command = "${pkgs.curl}/bin/curl -4 -s https://api.ipify.org";
+        ssl = true;
+      };
+
+      provider."no-ip.com:v6" = {
+        include  = config.age.secrets.inadyn-provider-noip.path;
+        hostname = [ "all.ddnskey.com" ];
+        checkip-command = "${pkgs.curl}/bin/curl -6 -s https://api64.ipify.org";
+        ssl = true;
       };
     };
   };
