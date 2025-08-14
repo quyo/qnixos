@@ -8,6 +8,7 @@
     [
       "roles/desktop"
       "parts/docker"
+      "parts/no-ip"
       "parts/qemu-guest"
     ];
 
