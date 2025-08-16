@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, qlib, ... }:
 
 {
 
@@ -6,9 +6,9 @@
   # services.openssh = {
   #   enable = true;
   #   settings = {
-  #     PermitRootLogin = lib.mkForce "yes";
-  #     PasswordAuthentication = lib.mkForce true;
-  #     PermitEmptyPasswords = lib.mkForce true;
+  #     PermitRootLogin = qlib.mkHostDefault "yes";
+  #     PasswordAuthentication = qlib.mkHostDefault true;
+  #     PermitEmptyPasswords = qlib.mkHostDefault true;
   #   };
   # };
 

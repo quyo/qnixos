@@ -13,6 +13,10 @@ specialArgs
   qlib = lib.q
   //
   {
+    mkBaseDefault = lib.mkOverride 1250;
+    mkRoleDefault = lib.mkDefault;
+    mkHostDefault = lib.mkForce;
+
     relativeToRoot = lib.path.append ./.;
   };
 }

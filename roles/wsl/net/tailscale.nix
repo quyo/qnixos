@@ -2,6 +2,6 @@
 
 {
 
-  services.tailscale.enable = lib.mkForce false;
+  services.tailscale.enable = false;
 
 }

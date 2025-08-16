@@ -2,6 +2,6 @@
 
 {
 
-  services.timesyncd.enable = lib.mkForce false;
+  services.timesyncd.enable = false;
 
 }

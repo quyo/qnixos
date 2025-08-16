@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostname, ... }:
+{ config, lib, pkgs, hostname, qlib, ... }:
 
 {
 
@@ -13,8 +13,8 @@
   networking.wireless.enable = false;
 
   networking.networkmanager.enable = false;
-  systemd.network.enable = lib.mkOptionDefault false;
-  services.resolved.enable = lib.mkOptionDefault false;
+  systemd.network.enable = qlib.mkBaseDefault false;
+  services.resolved.enable = qlib.mkBaseDefault false;
 
   # global fallback DNS in case the link DNS does not respond
   services.resolved.fallbackDns = [

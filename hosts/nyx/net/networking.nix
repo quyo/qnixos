@@ -1,12 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, qlib, ... }:
 
 let
   iface = "ens18";
 in
 {
 
-  systemd.network.enable = lib.mkForce true;
-  services.resolved.enable = lib.mkForce true;
+  systemd.network.enable = qlib.mkHostDefault true;
+  services.resolved.enable = qlib.mkHostDefault true;
 
   systemd.network.networks."10-${iface}" = {
     matchConfig.Name = [ iface ];

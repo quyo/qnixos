@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, qlib, ... }:
 
 {
 
   services.timesyncd = {
-    enable = lib.mkOptionDefault true;
+    enable = qlib.mkBaseDefault true;
 
     servers = [
       "0.de.pool.ntp.org"

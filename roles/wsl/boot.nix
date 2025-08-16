@@ -2,7 +2,7 @@
 
 {
 
-  boot.loader.grub.enable = lib.mkForce false;
+  boot.loader.grub.enable = false;
 
   wsl.wslConf.boot.systemd = true;
 

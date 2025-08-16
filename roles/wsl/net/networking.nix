@@ -2,7 +2,7 @@
 
 {
 
-  networking.useDHCP = lib.mkForce true;
+  networking.useDHCP = true;
 
   wsl.wslConf.network.generateResolvConf = true;
   wsl.wslConf.network.generateHosts = true;

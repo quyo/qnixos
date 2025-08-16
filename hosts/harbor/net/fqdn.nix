@@ -1,7 +1,7 @@
-{ config, lib, pkgs, hostname, ... }:
+{ config, lib, pkgs, qlib, hostname, ... }:
 
 {
 
-  quyo.net.fqdn = lib.mkForce "${hostname}.sky.quyo.net";
+  quyo.net.fqdn = qlib.mkHostDefault "${hostname}.sky.quyo.net";
 
 }

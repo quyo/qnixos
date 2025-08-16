@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, qlib, ... }:
 
 {
 
-  services.tailscale.enable = lib.mkOptionDefault true;
+  services.tailscale.enable = qlib.mkBaseDefault true;
 
 }
