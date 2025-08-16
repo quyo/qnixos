@@ -30,6 +30,8 @@
       publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGfU5fWGMhuf6y1re7qhnAUE11o+SiqIyTbtNqbvR+w/";
     };
 
+    "192.168.72.102".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINTmPTBd7Xqwmy5xes33F3WSqBY5SAA58C9euWr07QVq";
+
   };
 
   programs.ssh.extraConfig = ''
@@ -62,6 +64,10 @@
     Host harbor
       User johm
       HostName ka-sky-harbor.tailaccaf.ts.net
+
+    Host bigben
+      User johm
+      HostName 192.168.72.102
 
   '';
 
