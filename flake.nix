@@ -21,6 +21,9 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/release-25.05";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     # optionally choose not to download darwin deps (saves some resources on Linux)
@@ -39,5 +42,6 @@
     {
       extendSpecialArgs = import ./specialArgs.nix { inherit inputs; };
       nixosModules = import ./hosts { lib = nixpkgs.lib; };
+      packages = import ./packages.nix { inherit inputs; };
     };
 }

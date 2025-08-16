@@ -12,7 +12,7 @@
   networking.wireless.enable = false;
 
   networking.networkmanager.enable = false;
-  systemd.network.enable = false;
+  systemd.network.enable = lib.mkOptionDefault false;
   services.resolved.enable = false;
 
   # global fallback DNS in case the link DNS does not respond

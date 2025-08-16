@@ -10,6 +10,7 @@ all:
     just update-all
     just upgrade
 
+
 update:
     sudo nix flake update qnixos --flake /etc/nixos
 
@@ -24,3 +25,10 @@ cleanup:
 
 edit:
     sudo $EDITOR /etc/nixos/flake.nix
+
+
+lxc:
+    just proxmox-lxc
+
+proxmox-lxc:
+    nix build --builders '' .#proxmox-lxc
