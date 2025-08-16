@@ -8,12 +8,13 @@
   networking.interfaces = {};
   networking.defaultGateway = null;
   networking.nameservers = [];
+  networking.useHostResolvConf = false;
 
   networking.wireless.enable = false;
 
   networking.networkmanager.enable = false;
   systemd.network.enable = lib.mkOptionDefault false;
-  services.resolved.enable = false;
+  services.resolved.enable = lib.mkOptionDefault false;
 
   # global fallback DNS in case the link DNS does not respond
   services.resolved.fallbackDns = [

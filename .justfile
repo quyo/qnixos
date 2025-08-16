@@ -32,3 +32,5 @@ lxc:
 
 proxmox-lxc:
     nix build --builders '' .#proxmox-lxc
+    cp -f --update=all ./result/tarball/*.tar.xz .
+    rm -rf ./result
