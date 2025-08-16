@@ -3,7 +3,7 @@
 {
 
   services.timesyncd = {
-    enable = true;
+    enable = lib.mkOptionDefault true;
 
     servers = [
       "0.de.pool.ntp.org"
