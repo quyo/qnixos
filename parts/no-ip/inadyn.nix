@@ -2,8 +2,8 @@
 
 {
 
-  age.secrets.inadyn-provider-noip = {
-    file = "${secrets}/inadyn-provider-noip.age";
+  age.secrets.parts-noip-inadyn-provider-noip = {
+    file = "${secrets}/secrets/parts/no-ip/inadyn-provider-noip.age";
     owner = "inadyn";
     group = "inadyn";
     mode  = "0400";
@@ -17,14 +17,14 @@
       allow-ipv6 = true;
 
       provider."no-ip.com" = {
-        include  = config.age.secrets.inadyn-provider-noip.path;
+        include  = config.age.secrets.parts-noip-inadyn-provider-noip.path;
         hostname = [ "all.ddnskey.com" ];
         checkip-command = "${pkgs.curl}/bin/curl -4 -s https://api.ipify.org";
         ssl = true;
       };
 
       provider."no-ip.com:v6" = {
-        include  = config.age.secrets.inadyn-provider-noip.path;
+        include  = config.age.secrets.parts-noip-inadyn-provider-noip.path;
         hostname = [ "all.ddnskey.com" ];
         checkip-command = "${pkgs.curl}/bin/curl -6 -s https://api64.ipify.org";
         ssl = true;
