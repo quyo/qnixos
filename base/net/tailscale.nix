@@ -2,6 +2,6 @@
 
 {
 
-  services.tailscale.enable = true;
+  services.tailscale.enable = lib.mkOptionDefault true;
 
 }
