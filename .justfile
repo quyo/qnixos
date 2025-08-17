@@ -1,3 +1,6 @@
+set shell := ["bash", "-euo", "pipefail", "-c"]
+
+
 default:
     just edit
     just cleanup
