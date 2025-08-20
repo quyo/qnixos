@@ -8,6 +8,7 @@ let
   system = "x86_64-linux";
 in
 {
+
   ${system}.proxmox-lxc = nixos-generators.nixosGenerate {
     inherit system;
     format = "proxmox-lxc";
@@ -18,4 +19,5 @@ in
       nixosModules.proxmox-lxc
     ];
   };
+
 }
