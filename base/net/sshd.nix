@@ -2,8 +2,6 @@
 
 {
 
-  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-
   age.secrets.hosts-ssh-ssh_host_ed25519_key = {
     file = "${secrets}/secrets/hosts/${hostname}/ssh/ssh_host_ed25519_key.age";
     path = "/etc/ssh/ssh_host_ed25519_key";
