@@ -17,7 +17,7 @@
   };
 
   programs.ssh.extraConfig = lib.mkAfter ''
-    Match user root host !nixbuild.net
+    Match user root
       IdentityFile ${config.age.secrets.hosts-ssh-ssh_root_ed25519_key.path}
 
     Match user johm
