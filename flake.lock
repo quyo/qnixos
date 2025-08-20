@@ -208,11 +208,11 @@
     "qnixos-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1755687934,
-        "narHash": "sha256-0whxj0l6QoCaXDIhxWPflX8LpMRDgaMQvglVrCvSQ1o=",
+        "lastModified": 1755696639,
+        "narHash": "sha256-cZwCQXO3eltzmAiiKZi4hBUWfphYVb8Oz/rZI4TPyZk=",
         "owner": "quyo",
         "repo": "qnixos-secrets",
-        "rev": "38d1ad340eede8586ac550dd8872a711756e380a",
+        "rev": "8764d7b2b803734a96dcd1a1912529562c7e731f",
         "type": "github"
       },
       "original": {
