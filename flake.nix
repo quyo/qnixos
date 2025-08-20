@@ -34,7 +34,8 @@
     qnixpkgs.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
     qnixpkgs.inputs.qnixpkgs.follows = "qnixpkgs";
 
-    qnixos-secrets.url = "git+ssh://git@github.com/quyo/qnixos-secrets";
+    # qnixos-secrets.url = "git+ssh://git@github.com/quyo/qnixos-secrets";  # SSH via Key
+    qnixos-secrets.url   = "github:quyo/qnixos-secrets";                    # HTTPS via Token (PAT)
     qnixos-secrets.flake = false;
   };
 
