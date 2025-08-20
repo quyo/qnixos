@@ -11,14 +11,11 @@
       let
         userkey = host: builtins.readFile "${secrets}/secrets/hosts/${host}/ssh/ssh_johm_ed25519_key.pub";
       in
-      [
-        # OBSOLETE
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDJbNZ7WPukcyJs8KSPn8/LGfk4knwicscIBIhKAuEh6 johnm@de-adn-2tyd893"
-      ] ++ map userkey [
-        "de-adn-2tyd893"
-        "nyx"
-        "predator"
-      ];
+        map userkey [
+          "de-adn-2tyd893"
+          "nyx"
+          "predator"
+        ];
   };
 
 }
