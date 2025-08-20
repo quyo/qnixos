@@ -4,6 +4,7 @@
 
   age.secrets.hosts-ssh-ssh_root_ed25519_key = {
     file = "${secrets}/secrets/hosts/${hostname}/ssh/ssh_root_ed25519_key.age";
+    path = "${config.users.users.root.home}/.ssh/id_ed25519";
     owner = "root";
     group = "root";
     mode = "0600";
@@ -11,6 +12,7 @@
 
   age.secrets.hosts-ssh-ssh_johm_ed25519_key = {
     file = "${secrets}/secrets/hosts/${hostname}/ssh/ssh_johm_ed25519_key.age";
+    path = "${config.users.users.johm.home}/.ssh/id_ed25519";
     owner = "johm";
     group = "users";
     mode = "0600";
