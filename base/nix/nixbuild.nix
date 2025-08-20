@@ -38,7 +38,7 @@
 
   programs.ssh.knownHosts."eu.nixbuild.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
   programs.ssh.extraConfig = lib.mkBefore ''
-    Match user root host eu.nixbuild.net
+    Match localuser root host eu.nixbuild.net
       IdentitiesOnly yes
       IdentityFile ${config.age.secrets.base-nix-nixbuild-ssh_shared_ed25519_key.path}
       PreferredAuthentications publickey

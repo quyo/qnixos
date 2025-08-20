@@ -17,10 +17,10 @@
   };
 
   programs.ssh.extraConfig = lib.mkAfter ''
-    Match user root
+    Match localuser root
       IdentityFile ${config.age.secrets.hosts-ssh-ssh_root_ed25519_key.path}
 
-    Match user johm
+    Match localuser johm
       IdentityFile ${config.age.secrets.hosts-ssh-ssh_johm_ed25519_key.path}
 
     Match all
