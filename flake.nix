@@ -43,6 +43,6 @@
     {
       extendSpecialArgs = import ./specialArgs.nix { inherit inputs; };
       nixosModules = import ./hosts { lib = nixpkgs.lib; };
-      packages = import ./packages.nix { inherit inputs; };
+      packages = import ./packages { inherit inputs; };
     };
 }

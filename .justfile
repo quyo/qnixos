@@ -31,9 +31,10 @@ edit:
 
 
 lxc:
-    just proxmox-lxc
+    just proxmox-lxc-template
 
-proxmox-lxc:
-    nix build --builders '' .#proxmox-lxc
+proxmox-lxc-template:
+    nix build --builders '' .#proxmox-lxc-template
     cp -f --update=all ./result/tarball/*.tar.xz .
     rm -rf ./result
+    chmod 644 *.tar.xz
