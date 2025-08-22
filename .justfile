@@ -30,8 +30,8 @@ edit:
     sudo $EDITOR /etc/nixos/flake.nix
 
 
-lxc:
-    just proxmox-lxc-template
+lxc age_identity="/home/johm/.ssh/id_ed25519":
+    just proxmox-lxc-template {{age_identity}}
 
 proxmox-lxc-template age_identity="/home/johm/.ssh/id_ed25519":
     ../qnixos-secrets/scripts/build-with-age-identity.sh '{{age_identity}}'
