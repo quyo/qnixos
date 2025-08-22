@@ -33,8 +33,5 @@ edit:
 lxc:
     just proxmox-lxc-template
 
-proxmox-lxc-template:
-    nix build --builders '' .#proxmox-lxc-template
-    cp -f --update=all ./result/tarball/*.tar.xz .
-    rm -rf ./result
-    chmod 644 *.tar.xz
+proxmox-lxc-template age_identity="/home/johm/.ssh/id_ed25519":
+    ../qnixos-secrets/scripts/build-with-age-identity.sh '{{age_identity}}'
