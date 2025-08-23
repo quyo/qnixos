@@ -50,7 +50,7 @@ let
       base = builtins.elemAt m 0;
       ext  = builtins.elemAt m 1;
     in
-      "${base}-with-hostkey.tar.${ext}";
+      "${base}.host-${hostname}.tar.${ext}";
 
   pkgs = import inputs.nixpkgs { inherit system; };
   secrets = inputs.qnixos-secrets;
