@@ -32,6 +32,10 @@ edit:
 
 lxc age_identity="/home/johm/.ssh/id_ed25519":
     just proxmox-lxc-template {{age_identity}}
+    just serve-proxmox-lxc-template
 
-proxmox-lxc-template age_identity="/home/johm/.ssh/id_ed25519":
+build-proxmox-lxc-template age_identity="/home/johm/.ssh/id_ed25519":
     ../qnixos-secrets/scripts/build-with-age-identity.sh '{{age_identity}}'
+
+serve-proxmox-lxc-template:
+    nix run nixpkgs#python3 -- -m http.server 8080 --bind $(ip route get 1.1.1.1 | awk '{print $7; exit}')
