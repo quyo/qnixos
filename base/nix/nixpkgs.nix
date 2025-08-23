@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, system, ... }:
+{ config, lib, pkgs, inputs, system, pkgs-stable, pkgs-unstable, qpkgs, ... }:
 
 {
 
@@ -7,18 +7,11 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays =
     let
-      overlay-unstable = final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-
-      overlay-qnixpkgs = final: prev: {
-        qnixpkgs = inputs.qnixpkgs.packages.${system};
+      overlay = final: prev: {
+        inherit pkgs-stable pkgs-unstable qpkgs;
       };
     in
-      [ overlay-unstable overlay-qnixpkgs ];
+      [ overlay ];
 
   # Use the system nixpkgs for nix commands
   # https://www.zknotes.com/page/use%20the%20system%20nixpkgs%20for%20nix%20commands

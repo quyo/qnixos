@@ -1,9 +1,10 @@
-{ config, lib, pkgs, inputs, system, ... }:
+{ config, lib, pkgs, inputs, system, pkgs-stable, pkgs-unstable, qpkgs, ... }:
 
 {
 
   environment.systemPackages = with pkgs; [
-    qnixpkgs.userprofile
+  ] ++ [
+    qpkgs.userprofile
     inputs.agenix.packages.${system}.default
   ];
 
