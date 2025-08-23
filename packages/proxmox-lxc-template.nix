@@ -1,22 +1,37 @@
 { inputs, system }:
 
 let
+  getEnv = name: value:
+    let
+      x = builtins.getEnv name;
+    in
+      if x != ""
+      then x
+      else (throw "${name} not set; export ${name}=${value}");
+
+  hostname = getEnv "QNIXOS_HOSTNAME" "proxmox-lxc";
+
   nixosGenerated =
     let
       nixos-generators = inputs.nixos-generators;
       extendSpecialArgs = inputs.self.outputs.extendSpecialArgs;
       nixosModules = inputs.self.outputs.nixosModules;
-    in
-      nixos-generators.nixosGenerate {
+
+      generated = nixos-generators.nixosGenerate {
         inherit system;
         format = "proxmox-lxc";
 
-        specialArgs = extendSpecialArgs { inherit system; hostname = "proxmox-lxc"; };
+        specialArgs = extendSpecialArgs { inherit system hostname; };
 
         modules = [
-          nixosModules.proxmox-lxc
+          nixosModules.${hostname}
         ];
       };
+    in
+      generated.overrideAttrs (_: {
+        preferLocalBuild = true;
+        allowSubstitutes = false;
+      });
 
   nixosDir = nixosGenerated + "/tarball";
 
@@ -52,13 +67,7 @@ in
         pkgs.xz
       ];
 
-      AGE_IDENTITY =
-        let
-          p = builtins.getEnv "AGE_IDENTITY";
-        in
-          if p != ""
-          then p
-          else (throw "AGE_IDENTITY not set; export AGE_IDENTITY=/path/to/key");
+      AGE_IDENTITY = getEnv "AGE_IDENTITY" "/path/to/key";
     }
     ''
       set -Eeuo pipefail
@@ -66,13 +75,13 @@ in
 
       test -r "$AGE_IDENTITY" || { echo "AGE_IDENTITY not readable: $AGE_IDENTITY" >&2; exit 1; }
 
-      tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT INT TERM
-      tmpout="$tmp/out"
+      WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT INT TERM
+      TMPOUT="$WORK/out"
 
       fakeroot -- ${pkgs.bash}/bin/bash "${secrets}/scripts/inject-hostkey-into-tar.sh" \
         "${nixosTarballIn}" \
-        "${secrets}/secrets/hosts/proxmox-lxc/ssh/ssh_host_ed25519_key.age" \
-        "$tmpout"
+        "${secrets}/secrets/hosts/${hostname}/ssh/ssh_host_ed25519_key.age" \
+        "$TMPOUT"
 
-      install -m 0444 -T "$tmpout" "$out"
+      install -m 0444 -T "$TMPOUT" "$out"
     ''
