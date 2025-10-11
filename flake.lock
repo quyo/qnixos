@@ -238,11 +238,11 @@
         "shellscripts": "shellscripts"
       },
       "locked": {
-        "lastModified": 1754737890,
-        "narHash": "sha256-JnkJOFaD0MsUcYlKcRHpXKFS2NcwJJ3nTAZ0GHilwHE=",
+        "lastModified": 1760173129,
+        "narHash": "sha256-VS+fXgqojzZJJ/LomEi1NnMvk1D4UzsFeONdCmyugr0=",
         "owner": "quyo",
         "repo": "qnixpkgs",
-        "rev": "f44a0409802ce0c175f3d6a248c4b5660fc38774",
+        "rev": "38a17fbc8df6efdf37d7caa3ea3dec4ddd6e90fe",
         "type": "github"
       },
       "original": {
@@ -290,11 +290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743289334,
-        "narHash": "sha256-YFb8qhGwFw0F1e0WYFUicZdlNjCF0WgrFLPsi1h2CFo=",
+        "lastModified": 1760172105,
+        "narHash": "sha256-vbImkzAwKCpLNfaHYd7CNz+Sb3usEwX/rVPGrZmD9Bw=",
         "owner": "quyo",
         "repo": "shellscripts.nix",
-        "rev": "9dfef8aba74f8d88df6e2456d3d9dbfa43428edc",
+        "rev": "093a564967eb9b6c14fdd09157c7d7090fc3c7f3",
         "type": "github"
       },
       "original": {
