@@ -2,7 +2,7 @@
 
 {
 
-  age.secrets.base-nix-nixbuild-ssh_shared_ed25519_key = {
+  age.secrets.base-nix-nixbuild-ssh_shared_ed25519_key = lib.mkIf config.nix.distributedBuilds {
     file = "${secrets}/secrets/base/nix/nixbuild/ssh_shared_ed25519_key.age";
     owner = "root";
     group = "root";
@@ -37,7 +37,7 @@
       builtins.map (system: nixbuildNet // { inherit system; }) systems;
 
   programs.ssh.knownHosts."eu.nixbuild.net".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
-  programs.ssh.extraConfig = lib.mkBefore ''
+  programs.ssh.extraConfig = lib.mkIf config.nix.distributedBuilds (lib.mkBefore ''
     Match localuser root host eu.nixbuild.net
       IdentitiesOnly yes
       IdentityFile ${config.age.secrets.base-nix-nixbuild-ssh_shared_ed25519_key.path}
@@ -45,6 +45,6 @@
       PubkeyAcceptedKeyTypes ssh-ed25519
       ServerAliveInterval 60
       IPQoS throughput
-  '';
+  '');
 
 }

@@ -2,7 +2,7 @@
 
 {
 
-  age.secrets.base-net-postfix-smtp_sasl_password_maps = {
+  age.secrets.base-net-postfix-smtp_sasl_password_maps = lib.mkIf config.services.postfix.enable {
     file = "${secrets}/secrets/base/net/postfix/smtp_sasl_password_maps.age";
     path = "/var/lib/postfix/secret/smtp_sasl_password_maps";
     symlink = false;
