@@ -31,11 +31,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764011051,
-        "narHash": "sha256-M7SZyPZiqZUR/EiiBJnmyUbOi5oE/03tCeFrTiUZchI=",
+        "lastModified": 1768818222,
+        "narHash": "sha256-460jc0+CZfyaO8+w8JNtlClB2n4ui1RbHfPTLkpwhU8=",
         "owner": "numtide",
         "repo": "devshell",
-        "rev": "17ed8d9744ebe70424659b0ef74ad6d41fc87071",
+        "rev": "255a2b1725a20d060f566e4755dbf571bbbb5f76",
         "type": "github"
       },
       "original": {
@@ -63,11 +63,11 @@
     "flake-compat_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1765121682,
-        "narHash": "sha256-4VBOP18BFeiPkyhy9o4ssBNQEvfvv1kXkasAYd0+rrA=",
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
         "owner": "edolstra",
         "repo": "flake-compat",
-        "rev": "65f23138d8d09a92e30f1e5c87611b23ef451bf3",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
         "type": "github"
       },
       "original": {
@@ -238,11 +238,11 @@
         "shellscripts": "shellscripts"
       },
       "locked": {
-        "lastModified": 1774687841,
-        "narHash": "sha256-Uu/HYuFm6M6HEOlyQlSt5nbpO69DPTJz4OTp68EvE18=",
+        "lastModified": 1774700063,
+        "narHash": "sha256-d9iiQcGsaVQfuGsDBl6FKBXeuEtNA/+eqxY8vVXjC5Q=",
         "owner": "quyo",
         "repo": "qnixpkgs",
-        "rev": "61e60899da645a7331786005dd483d20bb053eba",
+        "rev": "41111852bab02f8bdcc557fe9d7ed61860d19faf",
         "type": "github"
       },
       "original": {
