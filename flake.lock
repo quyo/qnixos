@@ -238,11 +238,11 @@
         "shellscripts": "shellscripts"
       },
       "locked": {
-        "lastModified": 1774700063,
-        "narHash": "sha256-d9iiQcGsaVQfuGsDBl6FKBXeuEtNA/+eqxY8vVXjC5Q=",
+        "lastModified": 1774772017,
+        "narHash": "sha256-mkJFDk1QVW996a3QDVq1g7K3MG3SBcyB3qTK1/oMlsk=",
         "owner": "quyo",
         "repo": "qnixpkgs",
-        "rev": "41111852bab02f8bdcc557fe9d7ed61860d19faf",
+        "rev": "2a7016777c83325de166add58e4a28bdf5382cd9",
         "type": "github"
       },
       "original": {
