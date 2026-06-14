@@ -17,7 +17,7 @@
   services.resolved.enable = qlib.mkBaseDefault false;
 
   # global fallback DNS in case the link DNS does not respond
-  services.resolved.fallbackDns = [
+  services.resolved.settings.Resolve.FallbackDNS = [
 
     # IPv4
     "9.9.9.9"
@@ -28,6 +28,6 @@
     "2606:4700:4700::1111"
 
   ];
-  services.resolved.dnssec = "allow-downgrade";
+  services.resolved.settings.Resolve.DNSSEC = "allow-downgrade";
 
 }
