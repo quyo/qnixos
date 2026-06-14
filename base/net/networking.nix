@@ -4,7 +4,7 @@
 
   networking.hostName = hostname;
 
-  networking.useDHCP = false;
+  networking.useDHCP = qlib.mkBaseDefault false;
   networking.interfaces = {};
   networking.defaultGateway = null;
   networking.nameservers = [];
